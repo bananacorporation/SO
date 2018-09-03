@@ -48,10 +48,10 @@ COMANDI:
 	#(in questo caso testo2)
 	sed -i 's/t/T/g' testo > testo2
 
-	#sostitusce tutte le t di tutte parole che iniziano la riga con 	#essa con il simbolo *	
+	#sostitusce tutte le t di tutte parole che iniziano la riga con essa con il simbolo *	
 	sed 's/^t/*/g' testo
 	
-	#sostitusce tutte le t di tutte parole che termina la riga con 		#essa con il simbolo *
+	#sostitusce tutte le t di tutte parole che termina la riga con essa con il simbolo *
 	sed 's/t$/*/g' testo
 	
 	#sostuisce tutti i numeri che vanno da 0 a 9 con *
@@ -86,16 +86,18 @@ COMANDI:
 1	sed 's/[0-9]/(&)/g' testo 
 
 
-	#sostituisce i caratteri che vanno da 0-9 con se stessi  		#2 volte
+	#sostituisce i caratteri che vanno da 0-9 con se stessi 2 volte
 	sed 's/[0-9]/&&/g' testo
 	
-	#sostituisce il carattere / con io carttere *, il careetere \ indica invece che il successivo elemento deve essere trattato come un carattere
+	#sostituisce il carattere / con io carttere *, il careetere \ indica invece che 
+	#il successivo elemento deve essere trattato come un carattere
 2	sed 's/\//*/g' text == sed 's_/_*_g' text (credo pero che non sia buona norma) == sed 's:/:*:g' text == sed 'sa/a*ag' text .....
 
 	#sostituzione multipla di 10 con DIESCI di 5 con CINQUE e 0 con ZERO	 
 	sed 's/10/DIESCI/g;s/5/CINQUE/g;s/0/ZERO/g' testo
 
-	#non ho ben capito ma sostituisce la parola la parola funny con 1 e aggiungendo l'opzione -n e pg alla fine vengono stampate solo le rige modificate
+	#non ho ben capito ma sostituisce la parola la parola funny con 1 e aggiungendo l'opzione -n e
+	#pg alla fine vengono stampate solo le rige modificate
 	#se alla fine metto solo p al posto di g mi sampa tutto raddopiando le rige modificate
 	sed -n 's/funny/1/pg' testo 
 	
@@ -129,13 +131,17 @@ COMANDI:
 	#mi stampa il numero delle righe
 	sed -n '$=' testo 
 	
-	#la prima parte mi scrive il numero della riga e la seconda parte usa il comando N; per effettuare un append con quello le cose successive sostituendo il \n con il carattere - (in pratuca scrive i numeri di ogni riga seguite da uno - e dal cotenuto delle loro righe)
+	#la prima parte mi scrive il numero della riga e la seconda parte usa il comando N; per effettuare un append 
+	#con quello le cose successive sostituendo il \n con il carattere - 
+	#(in pratuca scrive i numeri di ogni riga seguite da uno - e dal cotenuto delle loro righe)
 	sed '=' testo | sed 'N; s/\n/-/'
 	
-	#mostra il numero delle righe che contengono piu di un carattere ed effettua la seconda parte solo se c'è piu di un carttere su quella riga
+	#mostra il numero delle righe che contengono piu di un carattere ed effettua la seconda parte solo se c'è piu di 
+	#un carttere su quella riga
 	sed '/./=' testo | sed '/./N; s/\n/-/'
 
-	#printa le righe skippandone 2 alla volta, ossia parte stampando la prima, salte le prossime 2 e stampa poi la quarta, poi stampa la setima...
+	#printa le righe skippandone 2 alla volta, ossia parte stampando la prima, salte le prossime 2 e stampa
+	#poi la quarta, poi stampa la setima...
 	sed -n 'p;n;n' testo
 	
 	#cancella le righe saltadone 1 alla volta
