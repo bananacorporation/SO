@@ -1,0 +1,83 @@
+TESTO:
+
+10 tiny toes
+this is that
+5 funny 0
+one two three
+tree twice
+
+TEXT:
+
+10 tiny toes
+this is that
+5 funny 0
+one t/wo three
+tree twice
+
+OPERATORI:
+	&: se stessi
+	
+
+COMANDI:
+	#sostituisce le t con le T (una sola)
+	sed 's/t/T/' testo
+
+	#sostituisce le t con le T(tutte)
+	sed 's/t/T/g' testo
+
+	#effettuare la sostutuzione e salvarla sul file corrente
+	#(in questo caso testo)
+	sed -i 's/t/T/g' testo
+
+	#effettuare la sostutuzione e salvarla su un'altro file
+	#(in questo caso testo2)
+	sed -i 's/t/T/g' testo > testo2
+
+	#sostitusce tutte le t di tutte parole che iniziano la riga con 	#essa con il simbolo *	
+	sed 's/^t/*/g' testo
+	
+	#sostitusce tutte le t di tutte parole che termina la riga con 		#essa con il simbolo *
+	sed 's/t$/*/g' testo
+	
+	#sostuisce tutti i numeri che vanno da 0 a 9 con *
+	sed 's/[0-9]/*/g' testo
+
+	#sostuisce tutti i caratteri che vanno dalla a alla z con * 
+	#(solo lettere minuscole)
+	sed 's/[a-z]/*/g' testo
+
+	#sostuisce tutti i caratteri che vanno dalla a alla z con * 
+	#(solo lettere maiuscole)
+	sed 's/[A-Z]/*/g' testo
+
+	#sostuisce tutti i caratteri che vanno dalla a alla z con * 
+	#(sia maiuscole che minuscole)
+	sed 's/[a-Z]/*/g' testo
+
+	#sostituisce tutti i caratteri tranne quelli che vanno da 0-9
+	sed 's/[^0-9]/*/g' testo 
+
+	#sosituisce tutti i caratteri che vanno da 0-9,a-z,A-Z con *
+	sed 's/[0-z]/*/g' testo     ==  sed 's/[a-zA-Z0-9]/*/g' testo
+	
+	#sostituisce le t + le lettere subito seguenti alla t che vanno 
+	#da h ad n sostitunedo anche esse 
+	#(es. tiny, dove t e la i,compresa tra la h e la n, sono
+ 	# sotituite con *ny ------ mentre twice non subisce modifiche)
+	sed 's/t[h-n]/*/g' testo 
+
+	#sostituisce i caratteri che vanno da 0-9 con se stessi
+	#tra parentesi
+	sed 's/[0-9]/(&)/g' testo 
+
+
+	#sostituisce i caratteri che vanno da 0-9 con se stessi  		#2 volte
+	sed 's/[0-9]/&&/g' testo
+
+	
+
+
+	
+
+
+
