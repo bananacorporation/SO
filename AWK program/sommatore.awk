@@ -1,4 +1,5 @@
 #!/bin/awk -f
+#somma tutti i numeri del file
 {
 for(i=1;i<=NF;i++)
 	s[i]+=$i;
