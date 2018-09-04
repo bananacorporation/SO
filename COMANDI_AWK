@@ -26,7 +26,17 @@ COMANDI:
 	#stampa il terzo campo della riga che contine la parola mi
 	cat testo.txt | awk '/mi/ {print$3}'
 
-	#stampa tutti i campi della riga che contine la parola mi
-	cat testo.txt | awk '/mi/ {print$3}'
+	#stampa tutti i CAMPI2 di tutte le righe
+	awk '{print$2}' testo.txt 
+
+	#stampa i campi 1,2 e 3 di tutte le righe separate dal carattere -
+	awk 'BEGIN {OFS="-"} {print $1,$2,$3}' testo.txt 
+
+	#stampa il nome dei file che hanno estensione .txt e che contengono la parola matteo
+	awk '/matteo/{print FILENAME}' *.txt
+	
+	
+	
+
 
 	
