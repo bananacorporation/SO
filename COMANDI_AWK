@@ -1,0 +1,32 @@
+AwK
+
+
+testo:
+
+ciao sono matteo
+e non mi drogo
+
+
+
+
+STRUTTURA DEL TESTO PER AWK
+
+
+		CAMPO1|	CAMPO2 |CAMPO3|	CAMPO4	|CAMPO5	
+		------|--------|------|---------|--------	
+	RIGA1	ciao  |	sono   |matteo|         |
+		------|--------|------|---------|--------
+	RIGA2 	e     |	non    |mi    |	drogo   |
+
+COMANDI:
+
+	#stampa tutte le righe che contengono la parola matteo
+	cat testo.txt | awk '/matteo/ {print$0}'
+
+	#stampa il terzo campo della riga che contine la parola mi
+	cat testo.txt | awk '/mi/ {print$3}'
+
+	#stampa tutti i campi della riga che contine la parola mi
+	cat testo.txt | awk '/mi/ {print$3}'
+
+	
