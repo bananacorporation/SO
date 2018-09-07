@@ -1,0 +1,79 @@
+AwK
+
+
+testo:
+
+ciao sono matteo
+e non mi drogo
+
+testo1:
+
+ciao:come:stai?
+io:bene
+
+numeri:
+
+1000
+
+ISTRUZIONI:
+	
+	BEGIN: viene eseguita per prima
+	END: viene eseguita al termine di tutto
+
+
+STRUTTURA DEL TESTO PER AWK
+
+
+		CAMPO1|	CAMPO2 |CAMPO3|	CAMPO4	|CAMPO5	
+		------|--------|------|---------|--------	
+	RIGA1	ciao  |	sono   |matteo|         |
+		------|--------|------|---------|--------
+	RIGA2 	e     |	non    |mi    |	drogo   |
+
+COMANDI:
+
+	#stampa tutte le righe che contengono la parola matteo
+	cat testo.txt | awk '/matteo/ {print$0}'
+
+	#stampa il terzo campo della riga che contine la parola mi
+	cat testo.txt | awk '/mi/ {print$3}'
+
+	#stampa tutti i CAMPI2 di tutte le righe
+	awk '{print$2}' testo.txt 
+
+	#stampa i campi 1,2 e 3 di tutte le righe separate dal carattere -
+	awk 'BEGIN {OFS="-"} {print $1,$2,$3}' testo.txt 
+
+	#stampa il nome dei file che hanno estensione .txt e che contengono la parola matteo
+	awk '/matteo/{print FILENAME}' *.txt
+
+	#stampa il campo 3 della riga che conteine la parola ciao nel primo campo
+	awk '{ if($1 ~ /ciao/) print $2}' testo.txt 
+
+	#stampa i primi campi di tutte le righe considerando i : come separatore tra i vari campi
+	awk -F: '{print $1}' testo1.txt 
+
+	#stampa tutte le righe in cui il primo campo sia un numero e sia maggiore di 1000 (in caso di carattere non lo controlla e lo stampa lo stesso)
+	awk '$1>10000 {print}' numeri.txt 
+
+	#stampa i 2 campi della seconda riga (NR --> NUMERO DI RIGHE)	
+	awk '{if(NR==1) print $2}' testo.txt
+
+	#inizializza var a 0 e controlla se incontra la parola ciao, ogni volta che la incontra incrementa var di 1 e alla fine di tutto stampa il valore di var
+	awk 'BEGIN{var=0}; {if(/ciao/){var++}};END{print var};' testo.txt
+
+ 	#nel BEGIN l'RS indica il separatore di righe mentre ORS cio che ci va messo al suo posto
+	awk 'BEGIN{RS="\n";ORS=""}{print $0}END{print "\n"}' elenco.txt
+
+	#calcola solo le parole che coincidono con quella messa dopo e con wc -l continamo quante volte compare
+	grep -o Luigi persone.txt | wc -l
+	
+	#inverte il file 
+	sort -r persone.txt
+
+	
+	
+	
+
+
+	

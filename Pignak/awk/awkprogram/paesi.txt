@@ -1,0 +1,6 @@
+italia 50
+usa 100
+brasile 75
+canada 30
+italia 200
+usa 100

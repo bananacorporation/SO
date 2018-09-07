@@ -1,0 +1,16 @@
+totale 880
+drwxrwxr-x 3 pignak pignak   4096 set  5 08:58 awk
+drwxrwxr-x 2 pignak pignak   4096 set  4 15:06 AWK program
+drwxrwxr-x 3 pignak pignak   4096 set  5 08:53 cprogram
+-rw-rw-r-- 1 pignak pignak      0 set  6 17:02 ls.txt
+-rw-rw-r-- 1 pignak pignak     71 set  6 16:39 paesi.awk
+-rw-rw-r-- 1 pignak pignak     58 set  6 16:40 paesi.txt
+-rw-rw-r-- 1 pignak pignak     21 set  6 15:57 piramide.txt
+-rw-rw-r-- 1 pignak pignak    578 set  6 12:05 prova
+-rw-rw-r-- 1 pignak pignak    407 set  6 12:05 p.txt
+-rw-rw-r-- 1 pignak pignak 842687 set  3 22:43 SCHEMA ESAME.png
+drwxrwxr-x 2 pignak pignak   4096 set  4 10:37 sed
+drwxrwxr-x 2 pignak pignak   4096 set  3 10:41 so
+-rw-rw-r-- 1 pignak pignak    109 set  6 16:06 sommacolonne.awk
+-rw-rw-r-- 1 pignak pignak     72 set  6 16:14 sommatutto.awk
+-rw-rw-r-- 1 pignak pignak    105 set  6 09:35 testo
